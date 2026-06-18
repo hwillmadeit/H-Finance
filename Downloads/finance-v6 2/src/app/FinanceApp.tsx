@@ -1024,7 +1024,7 @@ function SubscriptionTab({ data, save }: { data: AppData; save: (d: AppData) => 
   }
   const startEdit = (sub: Subscription) => {
     setEditId(sub.id)
-    setEditForm({ name: sub.name, type: sub.stype, amount: String(sub.amount), extra: sub.next, tags: tagsToStr(sub.tags), payment: sub.payment ?? { ...EMPTY_PAYMENT } })
+    setEditForm({ name: sub.name, type: sub.stype, amount: String(sub.amount), extra: sub.next, tags: tagsToStr(sub.tags), payment: sub.payment ?? { ...EMPTY_PAYMENT }, joinDate: '', payExpire: '', coveragePeriod: '' })
   }
   const saveEdit = (id: number) => {
     const updated: Subscription = { id, name: editForm.name || '미입력', stype: editForm.type, amount: +editForm.amount || 0, next: editForm.extra, tags: parseTags(editForm.tags), payment: editForm.payment }
@@ -1090,7 +1090,7 @@ function EducationTab({ data, save }: { data: AppData; save: (d: AppData) => voi
   }
   const startEdit = (edu: Education) => {
     setEditId(edu.id)
-    setEditForm({ name: edu.name, type: edu.etype, amount: String(edu.amount), extra: edu.period, tags: tagsToStr(edu.tags), payment: edu.payment ?? { ...EMPTY_PAYMENT } })
+    setEditForm({ name: edu.name, type: edu.etype, amount: String(edu.amount), extra: edu.period, tags: tagsToStr(edu.tags), payment: edu.payment ?? { ...EMPTY_PAYMENT }, joinDate: '', payExpire: '', coveragePeriod: '' })
   }
   const saveEdit = (id: number) => {
     const updated: Education = { id, name: editForm.name || '미입력', etype: editForm.type, amount: +editForm.amount || 0, period: editForm.extra, tags: parseTags(editForm.tags), payment: editForm.payment }
